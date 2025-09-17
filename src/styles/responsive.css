@@ -1,0 +1,236 @@
+/* 태블릿 화면 (768px ~ 1024px) */
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .cat-stage {
+    width: 250px;
+    height: 250px;
+  }
+
+  .cat {
+    width: 180px;
+    height: 180px;
+  }
+
+  .control-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* 모바일 화면 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .dancing-cat-container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cat-stage {
+    width: 200px;
+    height: 200px;
+  }
+
+  .cat {
+    width: 150px;
+    height: 150px;
+  }
+
+  .shadow {
+    width: 120px;
+    height: 15px;
+  }
+
+  .controls {
+    margin-top: 2rem;
+  }
+
+  .control-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .animation-buttons {
+    max-width: 300px;
+  }
+
+  .note {
+    font-size: 1.5rem;
+  }
+
+  /* 모바일에서 애니메이션 범위 조정 */
+  @keyframes bounceAnimation {
+    0%, 100% {
+      transform: translateY(0) scale(1, 1);
+    }
+    50% {
+      transform: translateY(-50px) scale(0.9, 1.1);
+    }
+  }
+
+  @keyframes danceAnimation {
+    0%, 100% {
+      transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    }
+    25% {
+      transform: translateX(10px) translateY(-10px) rotate(10deg) scale(0.95);
+    }
+    50% {
+      transform: translateX(0) translateY(-20px) rotate(0deg) scale(1.05);
+    }
+    75% {
+      transform: translateX(-10px) translateY(-10px) rotate(-10deg) scale(0.95);
+    }
+  }
+}
+
+/* 작은 모바일 화면 (480px 이하) */
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cat-stage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cat {
+    width: 120px;
+    height: 120px;
+  }
+
+  .shadow {
+    width: 100px;
+    height: 12px;
+  }
+
+  .controls {
+    margin-top: 1.5rem;
+  }
+
+  .control-btn {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .animation-buttons {
+    gap: 0.5rem;
+  }
+
+  .note {
+    font-size: 1.2rem;
+  }
+}
+
+/* 가로 모드 지원 */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .dancing-cat-container {
+    flex-direction: row;
+    padding: 0.5rem;
+  }
+
+  .title {
+    position: absolute;
+    top: 10px;
+    font-size: 1.5rem;
+  }
+
+  .cat-stage {
+    width: 180px;
+    height: 180px;
+  }
+
+  .cat {
+    width: 130px;
+    height: 130px;
+  }
+
+  .controls {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+
+  .animation-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* 고해상도 디스플레이 지원 */
+@media screen and (min-width: 1920px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  .cat-stage {
+    width: 400px;
+    height: 400px;
+  }
+
+  .cat {
+    width: 300px;
+    height: 300px;
+  }
+
+  .shadow {
+    width: 220px;
+    height: 30px;
+  }
+
+  .control-btn {
+    padding: 16px 32px;
+    font-size: 1.2rem;
+  }
+
+  .note {
+    font-size: 3rem;
+  }
+}
+
+/* 터치 디바이스 최적화 */
+@media (hover: none) and (pointer: coarse) {
+  .cat:hover {
+    transform: none;
+  }
+
+  .control-btn {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .control-btn:active {
+    transform: scale(0.95);
+  }
+}
+
+/* 다크모드 지원 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+
+  .shadow {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* 모션 감소 설정 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .cat,
+  .control-btn {
+    transition: none;
+  }
+}
